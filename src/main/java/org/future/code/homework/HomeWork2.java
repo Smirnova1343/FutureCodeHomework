@@ -37,14 +37,26 @@ public class HomeWork2 {
      *     - если метод validateLogin не выбросил ошибку - вернуть true
      *     - если метод validateLogin выбросил ошибку - вернуть false
      */
-
+     public class LoginValidationException extends Exception
+         LoginValidationException() {
+             super("Login Validation Exception");
+         }
+     }
     public static void validateLogin(String login) {
-        //Место для Вашего кода из пункта 2
+        Pattern pattern = Pattern.complite("<([{\^-=$!|]})?*+.>[a-z][A-Z][a-zA-Z\\d_]{1,20");
+        Matcher matches = pattern.matcher(login)
+        if (!matche.matches()) {
+        throw new LoginValidationException("login does not meet the requirements!")
     }
 
     public static Boolean isLoginValid(String login) {
-        //Место для Вашего кода из пункта 3
+    try {
+        validateLogin(login);
+        return true;
+        } catch ("LoginValidationException") {
         return false;
+    }
+    }   
     }
 
     /*
