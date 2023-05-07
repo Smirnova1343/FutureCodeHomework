@@ -35,12 +35,50 @@ public class HomeWork1 {
             announce всех встудентов преподавателя
      */
     public static class Student {
-        // Напиши здесь свою реализацию класса Student
+       private String name;
+        private Intager grade;
+        
+         public Student (String name, Intager grade) {
+             this. name = name;
+             this.grade  = grade;
+         }
+        public String getName() {
+            return name;
+        }
+        public Intager getGrade() {
+            return grade;
+        }
+         public String announce() {
+            return name + "учится в " + grade + " класс";
+         }
+
     }
 
     public static class Teacher {
-        // Напиши здесь свою реализацию класса Teacher
-    }
+        private String name;
+            private Student[] students = new Student[30];
+             private int studentsCount = 0;
+        
+        public Teacher (String name) {
+            this. name = name;
+        }
+        public String getName() {
+            return name;
+        }
+        public Student[] getStudents() {
+            return students;
+        }
+        public void addStudent (Student student) {
+            if (studentsCount < students. length) {
+                students [studentCount++] = student;
+            }
+        }
+                
+        
+        
+            
+        
+    
 
     /*
     Это метод main - нажми play что бы запустить тесты
